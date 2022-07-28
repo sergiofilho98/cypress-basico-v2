@@ -122,10 +122,10 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     //Aula06
 
     //Exercício
-    it('seleciona um arquivo da pasta fixtures', function() { 
+    it.only('seleciona um arquivo da pasta fixtures', function() { 
         cy.get('input[type="file"]')
         .should('not.have.value')
-        .selectFile('C:/Users/Sérgio Filho/Desktop/cypress/cypress-basico-v2/cypress/fixtures/example.json')
+        .selectFile('/Users/Sérgio Filho/Desktop/cypress/cypress-basico-v2/cypress/fixtures/example.json')
         .should(function($input){
             expect($input[0].files[0].name).to.equal('example.json')
         })
@@ -134,7 +134,7 @@ describe('Central de Atendimento ao Cliente TAT', function() {
     it('seleciona um arquivo simulando um drag-and-drop', function() { 
         cy.get('input[type="file"]')
         .should('not.have.value')
-        .selectFile('C:/Users/Sérgio Filho/Desktop/cypress/cypress-basico-v2/cypress/fixtures/example.json', {action: 'drag-drop'})
+        .selectFile('/Users/Sérgio Filho/Desktop/cypress/cypress-basico-v2/cypress/fixtures/example.json', {action: 'drag-drop'})
         .should(function($input){
             expect($input[0].files[0].name).to.equal('example.json')
         })    
